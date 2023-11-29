@@ -1,0 +1,13 @@
+pandas
+numpy
+matplotlib
+seaborn
+notebook
+scikit-learn
+tensorflow
+nltk
+wordcloud
+python-box
+PyYAML
+ensure
+-e .
