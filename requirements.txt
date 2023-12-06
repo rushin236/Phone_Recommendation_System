@@ -6,6 +6,8 @@ notebook
 scikit-learn
 tensorflow
 nltk
+gensim
+textblob
 wordcloud
 python-box
 PyYAML

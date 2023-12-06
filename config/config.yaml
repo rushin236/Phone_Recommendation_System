@@ -2,7 +2,7 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  source_URL: https://github.com/rushin236/Datasets/raw/main/Phone_Recommendation_System/gsmarena_product_data_final_text.csv
+  source_URL: https://github.com/rushin236/Datasets/raw/main/Phone_Recommendation_System/gsmarena_product_data_final_text1.csv
   local_data_file: artifacts/data_ingestion/raw_data.csv
 
 data_validation:
@@ -10,7 +10,12 @@ data_validation:
   STATUS_FILE: artifacts/data_validation/status.txt
   ALL_REQUIRED_FILES: ["raw_data.csv"]
 
-eda:
-  root_dir: artifacts/eda
+data_extraction:
+  root_dir: artifacts/data_extraction
   local_data_file: artifacts/data_ingestion/raw_data.csv
-  STATUS_FILE_PATH: artifacts/eda/status.txt
+  processed_data_file: artifacts/data_extraction/processed_data.csv
+
+data_transform:
+  root_dir: artifacts/data_transform
+  processed_data_file: artifacts/data_extraction/processed_data.csv
+  transform_data_file: artifacts/data_extraction/transform_data.csv
