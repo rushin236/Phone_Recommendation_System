@@ -1,1 +1,5 @@
-key: value
+parameters:
+  embedding_dim: 50
+  output_classes: 3
+  epochs: 25
+  batch_size: 32

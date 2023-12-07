@@ -2,6 +2,8 @@ pandas
 numpy
 matplotlib
 seaborn
+pingouin
+statsmodels
 notebook
 scikit-learn
 tensorflow
