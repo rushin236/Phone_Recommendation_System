@@ -30,14 +30,10 @@ h5 {
 }
 .section_1_label,
 .section_2_label,
-.section_3_label {
-    display: flex;
-    justify-content: space-evenly;
-}
-
+.section_3_label,
 .section_4_label {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .section_1_label label,
@@ -54,15 +50,16 @@ h5 {
 
 .section_1_input,
 .section_2_input,
-.section_3_input {
+.section_3_input,
+.section_4_input {
     display: flex;
     justify-content: space-evenly;
 }
 
-.section_4_input {
+/* .section_4_input {
     display: flex;
     justify-content: center;
-}
+} */
 
 .submit_button {
     display: flex;
@@ -103,4 +100,21 @@ td {
     height: 25px;
     font-family: monospace;
     font-size: 15px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    background-color: red;
+    padding: 3px;
+    border-radius: 5px;
+    display: inline;
+    margin: auto;
+    text-align: center;
+    font-size: larger;
+    font-family: monospace;
+    font-weight: bold;
 }

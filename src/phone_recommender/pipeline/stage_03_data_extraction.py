@@ -41,6 +41,8 @@ class DataExtractionPipeline:
         df['selfie_camera'] = df['text'].apply(lambda x: get_selfie_camera(x))
         df['bluetooth'] = df['text'].apply(lambda x: get_comms(x))
         df['battery'] = df['text'].apply(lambda x: get_battery(x))
+        df['price'] = df['text'].apply(lambda x: get_price(x))
+        df['price'] = df['price'].apply(lambda x: get_price_int(x))
         data_extraction.save_extracted_data(df=df)
 
 
@@ -270,20 +272,20 @@ def get_chipset(text):
 def get_memory(text):
     res = re.search(r"memory.*main camera", text)
     if res is not None:
-        res = re.sub(r".*internal|main.*|\(.*\)|- india|\.x", "", res.group())
+        res = re.sub(r".*internal|main.*|\(.*\)|- india|\.x|\d+mb", "", res.group())
         ram = " ".join(np.unique(re.findall(r"\dgb ram|\d\dgb ram", res)))
-        stg = re.sub(r"\dgb ram|\d\dgb ram|ram|\d+mb|,|1\.", "", res).strip()
+        stg = re.sub(r"\dgb ram|\d\dgb ram|,|1\.|sfs|umcp|emcp|", "", res).strip()
         ram = re.sub(r"ram", "", ram)
         type = re.search(r"ufs.*|emmc.*", stg)
         if type is not None:
-            stg = re.sub(r"ufs.*|emmc.*", "", stg)
+            stg = re.sub(r"ufs.*|emmc.*|sfs|umcp", "", stg)
             stg = " ".join(np.unique(stg.split()))
             type = re.sub(r"or.*", "", "".join(type.group().strip().split()))
             # print(ram, stg, type)
             return pd.Series([ram, stg, type], index=["ram", "storage", "type"])
-        elif ram == "":
-            # print("0 0 0")
-            return pd.Series(["0", "0", "0"], index=["ram", "storage", "type"])
+        elif (ram == "") and (stg != ""):
+            # print(f"0 {stg} 0")
+            return pd.Series(["0", stg, "0"], index=["ram", "storage", "type"])
         else:
             stg = " ".join(np.unique(stg.split()))
             # print(ram, stg)
@@ -353,3 +355,33 @@ def get_battery(text):
     else:
         # print("0")
         return "0"
+
+
+def get_price(text):
+    price = re.search(r"price.*", text)
+    if price is not None:
+        price = re.search(r"\d\d\d eur|\d\d eur|€ [0-9.,]{2,10}|₹ [0-9,]{2,10}", price.group())
+        if price is not None:
+            return price.group().strip()
+        else:
+            return "0"
+    else:
+        return "0"
+
+
+def get_price_int(price):
+    if "₹" in price:
+        price = re.sub(r"₹|,", "", price)
+        # print(round(float(price), 0))
+        return round(float(price), 0)
+    elif "€" in price:
+        price = re.sub(r"€|,", "", price)
+        # print(round(float(price), 0) * 89)
+        return round(float(price), 0) * 89
+    elif "eur" in price:
+        price = re.sub(r"eur|,", "", price)
+        # print(round(float(price), 0) * 89)
+        return round(float(price), 0) * 89
+    else:
+        # print(0)
+        return 0

@@ -1,12 +1,14 @@
 import os
 import pickle
 
+import numpy as np
 import pandas as pd
 from keras.layers import LSTM, Dense, Embedding
 from keras.models import Sequential
 from keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import Tokenizer
 from keras.utils import to_categorical
+from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 
 from phone_recommender.entity import ModelTrainConfig, ModelTrainParams
@@ -61,15 +63,25 @@ class ModelTrainer:
 
         # Compile the model
         model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+        print(model.summary())
 
         # Train the model
         epochs = self.params.epochs
         batch_size = self.params.batch_size
         model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, validation_split=0.2)
 
+        pred = model.predict(X_test)
+
+        pred = np.argmax(pred, axis=1)
+        y_test1 = np.argmax(y_test, axis=1)
+
+        print(classification_report(y_test1, pred))
+
         accuracy = model.evaluate(X_test, y_test)[1]
         with open(self.config.model_evaluation_file, "w") as f:
-            f.write(f'Test Accuracy: {accuracy * 100:.2f}%')
+            f.write(
+                f'Test Accuracy: {accuracy * 100:.2f}%\nClassification Report:\n{classification_report(y_test1, pred)}'
+            )
 
         return model, tokenizer
 

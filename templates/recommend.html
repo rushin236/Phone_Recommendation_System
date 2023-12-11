@@ -18,7 +18,7 @@ content %} {% block style %}
     <div class="user-input">
         <h4>Phone Specification</h4>
         <div class="inputs">
-            <form action="/recommendation" method="post">
+            <form action="/recommend" method="post">
                 <div class="section_1_label">
                     <!-- Network Type -->
                     <label for="network_type">Network Type</label>
@@ -53,7 +53,7 @@ content %} {% block style %}
                     <!-- Selfie Camera -->
                     <label for="selfie_camera">Selfie Camera (in MP)</label>
                 </div>
-                <div class="section_3_label">
+                <div class="section_3_input">
                     <input type="text" id="storage" name="storage" required />
                     <input type="text" id="main_camera" name="main_camera" required />
                     <input type="text" id="selfie_camera" name="selfie_camera" required />
@@ -61,13 +61,31 @@ content %} {% block style %}
                 <div class="section_4_label">
                     <!-- Battery -->
                     <label for="battery">Battery (in mAh)</label>
+                    <!-- Lower Price Limit -->
+                    <label for="lower_price">Lower Price Limit</label>
+                    <!-- Upper Price Limit -->
+                    <label for="lower_price">Upper Price Limit</label>
                 </div>
                 <div class="section_4_input">
                     <input type="text" id="battery" name="battery" required />
+                    <input type="number" id="lower_price" name="lower_price" required />
+                    <input type="number" id="upper_price" name="upper_price" required />
                 </div>
                 <div class="submit_button">
                     <!-- Submit Button -->
                     <input type="submit" value="Submit" />
+                </div>
+                <div class="message">
+                    <!-- Display flashed messages -->
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <ul class="flash-messages">
+                        {% for message in messages %}
+                        <li class="{{ message.category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
                 </div>
             </form>
         </div>
@@ -93,6 +111,7 @@ content %} {% block style %}
                             <th>Selfie Camera</th>
                             <th>Bluetooth</th>
                             <th>Battery</th>
+                            <th>Price</th>
                         </tr>
                     </thead>
                     <tbody>
