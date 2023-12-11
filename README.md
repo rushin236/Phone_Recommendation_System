@@ -1,7 +1,5 @@
 # Phone Recommendation System
 
-# Phone Recommendation System
-
 Welcome to the Phone Recommendation System! This system helps you find the perfect smartphone based on your preferences.
 
 ## Setup
