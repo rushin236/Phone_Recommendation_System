@@ -1,0 +1,113 @@
+{% extends "base.html" %} {% block title %}Recommender{% endblock %} {% block
+content %} {% block style %}
+<link rel="stylesheet" href="../staticFiles/recommend.css" />
+{% endblock %}
+<div class="recommend-container">
+    <div id="container-heading">
+        <header>
+            <h3>Recommender</h3>
+        </header>
+    </div>
+    <div class="recommend-content">
+        <div class="sub-header">
+            <header>
+                <h4>Welcome to phone recommendation system!</h4>
+            </header>
+        </div>
+    </div>
+    <div class="user-input">
+        <h4>Phone Specification</h4>
+        <div class="inputs">
+            <form action="/recommendation" method="post">
+                <div class="section_1_label">
+                    <!-- Network Type -->
+                    <label for="network_type">Network Type</label>
+                    <!-- Screen Size -->
+                    <label for="screen_size">Screen Size (in inches)</label>
+                    <!-- Screen Resolution -->
+                    <label for="screen_resolution">Screen Resolution</label>
+                </div>
+                <div class="section_1_input">
+                    <input type="text" id="network_type" name="network" required />
+                    <input type="text" id="screen_size" name="display_size_str" required />
+                    <input type="text" id="screen_resolution" name="resolution" required />
+                </div>
+                <div class="section_2_label">
+                    <!-- Display Type -->
+                    <label for="display_type">Display Type</label>
+                    <!-- Chipset -->
+                    <label for="chipset">Chipset</label>
+                    <!-- RAM -->
+                    <label for="ram">RAM (in GB)</label>
+                </div>
+                <div class="section_2_input">
+                    <input type="text" id="display_type" name="display_type" required />
+                    <input type="text" id="chipset" name="chipset" required />
+                    <input type="text" id="ram" name="ram" required />
+                </div>
+                <div class="section_3_label">
+                    <!-- Storage -->
+                    <label for="storage">Storage (in GB)</label>
+                    <!-- Main Camera -->
+                    <label for="main_camera">Main Camera (in MP)</label>
+                    <!-- Selfie Camera -->
+                    <label for="selfie_camera">Selfie Camera (in MP)</label>
+                </div>
+                <div class="section_3_label">
+                    <input type="text" id="storage" name="storage" required />
+                    <input type="text" id="main_camera" name="main_camera" required />
+                    <input type="text" id="selfie_camera" name="selfie_camera" required />
+                </div>
+                <div class="section_4_label">
+                    <!-- Battery -->
+                    <label for="battery">Battery (in mAh)</label>
+                </div>
+                <div class="section_4_input">
+                    <input type="text" id="battery" name="battery" required />
+                </div>
+                <div class="submit_button">
+                    <!-- Submit Button -->
+                    <input type="submit" value="Submit" />
+                </div>
+            </form>
+        </div>
+        <div class="user-recommendation">
+            <h4>Recommendation's</h4>
+            <div class="recommendations">
+                <table border="2">
+                    <thead>
+                        <tr>
+                            <th>Brand</th>
+                            <th>Phone Name</th>
+                            <th>Network</th>
+                            <th>Released Year</th>
+                            <th>Resolution</th>
+                            <th>Display Size</th>
+                            <th>Display Type</th>
+                            <th>OS</th>
+                            <th>Chipset</th>
+                            <th>RAM</th>
+                            <th>Storage</th>
+                            <th>Type</th>
+                            <th>Main Camera</th>
+                            <th>Selfie Camera</th>
+                            <th>Bluetooth</th>
+                            <th>Battery</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for phone in recommendation %}
+                        <tr>
+                            {% for i in phone %}
+
+                            <td>{{i}}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

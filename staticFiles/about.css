@@ -1,0 +1,50 @@
+#container-heading {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(236, 240, 241);
+}
+
+h3 {
+    color: rgb(96, 125, 139);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 30px;
+    font-family: monospace;
+    padding: 7px;
+}
+
+h4 {
+    color: rgb(96, 125, 139);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 25px;
+    font-family: monospace;
+    padding: 7px;
+    text-align: center;
+}
+h5 {
+    margin-left: 5%;
+    font-size: 22px;
+    font-family: monospace;
+    color: rgb(96, 125, 139);
+}
+
+li {
+    font-family: monospace;
+    font-size: 18px;
+    width: 75%;
+    margin: auto;
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img {
+    margin-left: 10%;
+}
+
+.data-visualization p {
+    margin-left: 10%;
+    width: 75%;
+}

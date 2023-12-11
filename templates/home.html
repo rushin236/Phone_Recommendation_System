@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%} {% block style %}
+<link rel="stylesheet" href="../staticFiles/home.css" />
+{% endblock %}
+<div class="home-container">
+    <div id="container-heading">
+        <header>
+            <h3>Home</h3>
+        </header>
+    </div>
+    <div class="home-content">
+        <div class="sub-header">
+            <header>
+                <h4>Welcome to phone recommendation system.</h4>
+            </header>
+        </div>
+        <div class="project-content">
+            <div class="site-info">
+                <span>Introduction:</span>
+                <ul>
+                    <p>
+                        Welcome to our phone recommendation system! In this
+                        world of new technology, where various brands launch
+                        many phones every month with new or old specifications.
+                        It is very hard task to find best fitting phone for our
+                        needs.
+                    </p>
+                    <p>
+                        This is where the system comes in and to help you choose
+                        the write phone for based on the input specifications,
+                        eliminates the processes of going through specifications
+                        of phones from various brands.
+                    </p>
+                </ul>
+                <span>Information on Data:</span>
+                <ul>
+                    <p>
+                        The data is gathered form a famous site GSMArena click
+                        <a href="https://www.gsmarena.com/">here</a>
+                        to visit. Data is gathered using web scraping.
+                    </p>
+                    <p>
+                        The code and tools used for data gathering can be found
+                        <a
+                            href="https://github.com/rushin236/GSMArena_Data_Gathering"
+                        >
+                            here
+                        </a>
+                        , for more information on data please check
+                        <a href="/about">about</a>
+                        section.
+                    </p>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

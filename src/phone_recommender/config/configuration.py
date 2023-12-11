@@ -6,6 +6,7 @@ from phone_recommender.entity import (
     DataValidationConfig,
     ModelTrainConfig,
     ModelTrainParams,
+    PredictionConfig,
 )
 from phone_recommender.utils.common import create_directories, read_yaml
 
@@ -66,7 +67,7 @@ class ConfigurationManager:
 
         return data_transform_config
 
-    def get_model_build_config(self):
+    def get_model_train_params_config(self) -> (ModelTrainConfig, ModelTrainParams):
         config = self.config.model_training
         params = self.params.parameters
 
@@ -88,3 +89,16 @@ class ConfigurationManager:
         )
 
         return model_train_config, model_train_params
+
+    def get_prediction_config(self) -> PredictionConfig:
+        config = self.config.prediction
+
+        prediction_config = PredictionConfig(
+            model_file=config.model_file,
+            tokenizer_file=config.tokenizer_file,
+            vectorizer_file=config.vectorizer_file,
+            transform_data_file=config.transform_data_file,
+            max_sequence_length=config.max_sequence_length,
+        )
+
+        return prediction_config

@@ -26,7 +26,7 @@ class ModelTrainer:
             df = pd.read_csv(self.config.transform_data_file)
             return df
 
-    def build_model(self, df: pd.DataFrame):
+    def train_model(self, df: pd.DataFrame):
         text = list(df['text'])
         clusters = df['class']
 
@@ -39,6 +39,7 @@ class ModelTrainer:
 
         # Pad sequences to make them of equal length (required for neural networks)
         max_sequence_length = max(map(len, sequences))
+        print(max_sequence_length)
         padded_sequences = pad_sequences(sequences, maxlen=max_sequence_length, padding='post')
 
         # Data Sampling

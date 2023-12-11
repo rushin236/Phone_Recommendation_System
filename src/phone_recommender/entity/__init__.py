@@ -46,3 +46,12 @@ class ModelTrainParams:
     output_classes: int
     epochs: int
     batch_size: int
+
+
+@dataclass
+class PredictionConfig:
+    model_file: Path
+    tokenizer_file: Path
+    vectorizer_file: Path
+    transform_data_file: Path
+    max_sequence_length: int

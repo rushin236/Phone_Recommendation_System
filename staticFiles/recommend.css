@@ -1,0 +1,106 @@
+#container-heading {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(236, 240, 241);
+}
+
+h3 {
+    color: rgb(96, 125, 139);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 30px;
+    font-family: monospace;
+    padding: 7px;
+}
+
+h4 {
+    color: rgb(96, 125, 139);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 25px;
+    font-family: monospace;
+    padding: 7px;
+    text-align: center;
+}
+h5 {
+    margin-left: 5%;
+    font-size: 22px;
+    font-family: monospace;
+    color: rgb(96, 125, 139);
+}
+.section_1_label,
+.section_2_label,
+.section_3_label {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.section_4_label {
+    display: flex;
+    justify-content: center;
+}
+
+.section_1_label label,
+.section_2_label label,
+.section_3_label label,
+.section_4_label label {
+    width: 300px;
+    text-align: center;
+    padding: 5px;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.section_1_input,
+.section_2_input,
+.section_3_input {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.section_4_input {
+    display: flex;
+    justify-content: center;
+}
+
+.submit_button {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+input {
+    height: 30px;
+    width: 300px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.recommendations {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+tr {
+    text-align: center;
+}
+
+th {
+    height: 30px;
+    width: 100px;
+    font-family: monospace;
+    font-size: larger;
+}
+
+td {
+    height: 25px;
+    font-family: monospace;
+    font-size: 15px;
+}

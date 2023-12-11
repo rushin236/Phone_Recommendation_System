@@ -1,5 +1,5 @@
 parameters:
   embedding_dim: 50
   output_classes: 3
-  epochs: 25
+  epochs: 20
   batch_size: 32

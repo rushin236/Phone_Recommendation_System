@@ -20,18 +20,13 @@ class DataTransform:
             df = pd.read_csv(extracted_data_file)
             return df
 
-    def save_transformed_data(self, df: pd.DataFrame):
-        df.to_csv(self.config.transform_data_file, index=False)
-
     def get_transform_dataframe(self, df_cate: pd.DataFrame):
         trans_columns = [
-            'brand',
             'network',
             'released_year',
             'resolution',
             'display_size_str',
             'display_type',
-            'os',
             'chipset',
             'ram',
             'storage',
@@ -58,3 +53,6 @@ class DataTransform:
     def save_vectorizer(self, vectorizer):
         with open(self.config.vectorizer_file, "wb") as handle:
             pickle.dump(vectorizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+    def save_transformed_data(self, df: pd.DataFrame):
+        df.to_csv(self.config.transform_data_file, index=False)
