@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 __version__ = "0.0.1"
 
-REPO_NAME = "Phone_Recommendation_System"
+REPO_NAME = "Phone_recommendation_system"
 AUTHOR_USER_NAME = "rushin236"
 SRC_REPO = "phone_recommender"
 AUTH_EMAIL = "rushikeshshindesandesh@gmail.com"
@@ -20,7 +20,7 @@ setuptools.setup(
     long_description_content="text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
     project_urls={
-        "BUg Tracking": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues",
+        "Bug Tracking": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues",
     },
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),

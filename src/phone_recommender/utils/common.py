@@ -1,12 +1,10 @@
 import os
 from pathlib import Path
-from typing import Any
 
 import yaml
 from box import ConfigBox
 from box.exceptions import BoxValueError
 from ensure import ensure_annotations
-
 from phone_recommender.logging import logger
 
 
