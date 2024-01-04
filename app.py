@@ -1,9 +1,22 @@
-from flask import Flask, flash, redirect, render_template, request, url_for
+from flask import (
+    Flask,
+    flash,
+    redirect,
+    render_template,
+    request,
+    send_from_directory,
+    url_for,
+)
 
 from phone_recommender.pipeline.stage_06_prediction import UserPredictionPipeline
 
-app = Flask(__name__, template_folder='templates', static_folder="staticFiles")
+app = Flask(__name__)
 app.secret_key = "123"
+
+
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return send_from_directory('static', filename)
 
 
 @app.route("/")

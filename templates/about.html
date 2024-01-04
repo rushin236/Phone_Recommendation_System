@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block title %}About{% endblock %} {% block content
 %} {% block style %}
-<link rel="stylesheet" href="../staticFiles/about.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css' ) }}" />
 {% endblock %}
 <div class="about-container">
     <div id="container-heading">
@@ -90,18 +90,20 @@
             </div>
             <div class="data-visualization">
                 <h5>Visualizations:</h5>
-                <img src="../staticFiles/top_20_technologies.png" alt="Top 20 Technologies Distribution." />
+                <img src="{{ url_for('static', filename='images/top_20_technologies.png' ) }}"
+                    alt="Top 20 Technologies Distribution." />
                 <p>
                     These are the top 20 features used in phones of todays
                     world.
                 </p>
-                <img src="../staticFiles/no_of_4g_5g_bands_distribution.png" alt="4G and 5G Bands Distribution." />
+                <img src="{{ url_for('static', filename='images/no_of_4g_5g_bands_distribution.png' ) }}"
+                    alt="4G and 5G Bands Distribution." />
                 <p>
                     A lot of phones don't have 5g bands in our data set, also
                     most of the phones have bands in between 5 to 15 may the
                     phone be 5g or 4g.
                 </p>
-                <img src="../staticFiles/top_6_camera.png" alt="Camera Distribution" />
+                <img src="{{ url_for('static', filename='images/top_6_camera.png' ) }}" alt="Camera Distribution" />
                 <p>
                     So 50mp, 13mp followed by 48mp can be seen in a lot of
                     phones with respect to data. Note: the camera mega pixel
@@ -110,35 +112,40 @@
                     making the image as these cameras heavily relies on the AI
                     to process the image.
                 </p>
-                <img src="../staticFiles/top_6_front_camera.png" alt="Front Camera Distribution." />
+                <img src="{{ url_for('static', filename='images/top_6_front_camera.png' ) }}"
+                    alt="Front Camera Distribution." />
                 <p>
                     In terms of front camera the 16mp and 8mp is the most common
                     choice.
                 </p>
-                <img src="../staticFiles/top_6_display_sizes.png" alt="Display Size Distribution" />
+                <img src="{{ url_for('static', filename='images/top_6_display_sizes.png' ) }}"
+                    alt="Display Size Distribution" />
                 <p>
                     So as we can see as of now the most common display size is
                     6.5 inch followed by 6.7 and 6.6. The pattern here that we
                     can see is the now brands are moving towards bigger displays
                     from smaller once.
                 </p>
-                <img src="../staticFiles/Top_6_display_types.png" alt="Display Types Distribution." />
+                <img src="{{ url_for('static', filename='images/Top_6_display_types.png' ) }}"
+                    alt="Display Types Distribution." />
                 <p>
                     Most common type of display used in mobile phone is ips
                     panel. Followed by super OLED which is better than ips in
                     terms of brightness and color contrast.
                 </p>
-                <img src="../staticFiles/top_6_ram_config.png" alt="Ram Config Distribution." />
+                <img src="{{ url_for('static', filename='images/top_6_ram_config.png' ) }}"
+                    alt="Ram Config Distribution." />
                 <p>
                     So as we can see that a lot of phones offer ram from 6gb to
                     12gb. With 8gb being the most common option.
                 </p>
-                <img src="../staticFiles/top_storage_config.png" alt="Storage Config Distribution." />
+                <img src="{{ url_for('static', filename='images/top_storage_config.png' ) }}"
+                    alt="Storage Config Distribution." />
                 <p>
                     In todays world of growing file sizes we can see that 128 gb
                     and 256gb config are the most common.
                 </p>
-                <img src="../staticFiles/top_chipsets.png" alt="Chipset Distribution." />
+                <img src="{{ url_for('static', filename='images/top_chipsets.png' ) }}" alt="Chipset Distribution." />
                 <p>Top 10 chipset used by phone manufactures.</p>
             </div>
         </div>

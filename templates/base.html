@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Phone Recommender</title>
-        <link rel="stylesheet" href="../staticFiles/base.css" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css' ) }}" />
     </head>
+
     <body>
         <div class="base-container">
             <div class="content-heading">
@@ -24,4 +26,5 @@
         </div>
         <div id="content">{% block content %}{% endblock %}</div>
     </body>
+
 </html>

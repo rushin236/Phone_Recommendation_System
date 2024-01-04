@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block title %}Recommender{% endblock %} {% block
 content %} {% block style %}
-<link rel="stylesheet" href="../staticFiles/recommend.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/recommend.css' ) }}" />
 {% endblock %}
 <div class="recommend-container">
     <div id="container-heading">

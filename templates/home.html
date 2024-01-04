@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %} {% block style %}
-<link rel="stylesheet" href="../staticFiles/home.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css' ) }}" />
 {% endblock %}
 <div class="home-container">
     <div id="container-heading">
@@ -41,9 +41,7 @@
                     </p>
                     <p>
                         The code and tools used for data gathering can be found
-                        <a
-                            href="https://github.com/rushin236/GSMArena_Data_Gathering"
-                        >
+                        <a href="https://github.com/rushin236/GSMArena_Data_Gathering">
                             here
                         </a>
                         , for more information on data please check
