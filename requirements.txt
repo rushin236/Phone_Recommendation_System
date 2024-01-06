@@ -15,4 +15,5 @@ python-box
 PyYAML
 ensure
 Flask
+mod_wsgi
 -e .
