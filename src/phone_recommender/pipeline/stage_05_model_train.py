@@ -1,5 +1,5 @@
-from phone_recommender.components.model_trainer import ModelTrainer
-from phone_recommender.config.configuration import ConfigurationManager
+from src.phone_recommender.components.model_trainer import ModelTrainer
+from src.phone_recommender.config.configuration import ConfigurationManager
 
 
 class ModelTrainerPipeline:

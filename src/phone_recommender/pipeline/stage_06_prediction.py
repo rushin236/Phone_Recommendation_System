@@ -3,8 +3,8 @@ import pandas as pd
 from keras.preprocessing.sequence import pad_sequences
 from sklearn.metrics.pairwise import cosine_similarity
 
-from phone_recommender.components.user_prediction import Prediction
-from phone_recommender.config.configuration import ConfigurationManager
+from src.phone_recommender.components.user_prediction import Prediction
+from src.phone_recommender.config.configuration import ConfigurationManager
 
 
 def get_class_prediction(model, trans_df, tokenizer, max_sequence_length, user_data):

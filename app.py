@@ -8,7 +8,7 @@ from flask import (
     url_for,
 )
 
-from phone_recommender.pipeline.stage_06_prediction import UserPredictionPipeline
+from src.phone_recommender.pipeline.stage_06_prediction import UserPredictionPipeline
 
 app = Flask(__name__)
 app.secret_key = "123"

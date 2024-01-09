@@ -4,8 +4,8 @@ from sklearn.cluster import KMeans
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
 # Setup libraries
-from phone_recommender.components.data_transform import DataTransform
-from phone_recommender.config.configuration import ConfigurationManager
+from src.phone_recommender.components.data_transform import DataTransform
+from src.phone_recommender.config.configuration import ConfigurationManager
 
 
 class DataTransformPipeline:

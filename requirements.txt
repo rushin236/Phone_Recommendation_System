@@ -2,18 +2,12 @@ pandas
 numpy
 matplotlib
 seaborn
-pingouin
-statsmodels
-notebook
+ipykernel
 scikit-learn
 tensorflow
-nltk
-gensim
-textblob
-wordcloud
 python-box
 PyYAML
 ensure
 Flask
-mod_wsgi
+streamlit
 -e .

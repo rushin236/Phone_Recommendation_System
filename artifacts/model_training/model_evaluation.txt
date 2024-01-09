@@ -1,11 +1,11 @@
-Test Accuracy: 96.70%
+Test Accuracy: 96.43%
 Classification Report:
               precision    recall  f1-score   support
 
-           0       0.97      0.96      0.97        78
-           1       0.94      0.96      0.95       124
-           2       0.98      0.98      0.98       162
+           0       0.95      0.96      0.96        78
+           1       0.94      0.95      0.95       124
+           2       0.99      0.98      0.98       162
 
-    accuracy                           0.97       364
-   macro avg       0.97      0.97      0.97       364
-weighted avg       0.97      0.97      0.97       364
+    accuracy                           0.96       364
+   macro avg       0.96      0.96      0.96       364
+weighted avg       0.96      0.96      0.96       364

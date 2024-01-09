@@ -1,5 +1,5 @@
-from phone_recommender.constants import *
-from phone_recommender.entity import (
+from src.phone_recommender.constants import *
+from src.phone_recommender.entity import (
     DataExtractionConfig,
     DataIngestionConfig,
     DataTransformConfig,
@@ -8,7 +8,7 @@ from phone_recommender.entity import (
     ModelTrainParams,
     PredictionConfig,
 )
-from phone_recommender.utils.common import create_directories, read_yaml
+from src.phone_recommender.utils.common import create_directories, read_yaml
 
 
 class ConfigurationManager:

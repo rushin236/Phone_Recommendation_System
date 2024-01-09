@@ -1,11 +1,15 @@
 import warnings
 
-from phone_recommender.logging import logger
-from phone_recommender.pipeline.stage_01_data_ingestion import DataIngestionPipeline
-from phone_recommender.pipeline.stage_02_data_validation import DataValidationPipeline
-from phone_recommender.pipeline.stage_03_data_extraction import DataExtractionPipeline
-from phone_recommender.pipeline.stage_04_data_transform import DataTransformPipeline
-from phone_recommender.pipeline.stage_05_model_train import ModelTrainerPipeline
+from src.phone_recommender.logging import logger
+from src.phone_recommender.pipeline.stage_01_data_ingestion import DataIngestionPipeline
+from src.phone_recommender.pipeline.stage_02_data_validation import (
+    DataValidationPipeline,
+)
+from src.phone_recommender.pipeline.stage_03_data_extraction import (
+    DataExtractionPipeline,
+)
+from src.phone_recommender.pipeline.stage_04_data_transform import DataTransformPipeline
+from src.phone_recommender.pipeline.stage_05_model_train import ModelTrainerPipeline
 
 warnings.filterwarnings("ignore")
 

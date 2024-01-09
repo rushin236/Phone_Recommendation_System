@@ -2,8 +2,8 @@ import os
 
 import pandas as pd
 
-from phone_recommender.entity import DataExtractionConfig
-from phone_recommender.logging import logger
+from src.phone_recommender.entity import DataExtractionConfig
+from src.phone_recommender.logging import logger
 
 
 class DataExtraction:

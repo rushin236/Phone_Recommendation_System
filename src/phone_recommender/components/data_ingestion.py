@@ -2,9 +2,9 @@ import os
 import urllib.request as request
 from pathlib import Path
 
-from phone_recommender.entity import DataIngestionConfig
-from phone_recommender.logging import logger
-from phone_recommender.utils.common import get_size
+from src.phone_recommender.entity import DataIngestionConfig
+from src.phone_recommender.logging import logger
+from src.phone_recommender.utils.common import get_size
 
 
 class DataIngestion:

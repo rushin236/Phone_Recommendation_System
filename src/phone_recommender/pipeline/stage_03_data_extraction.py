@@ -3,8 +3,8 @@ import re
 import numpy as np
 import pandas as pd
 
-from phone_recommender.components.data_extraction import DataExtraction
-from phone_recommender.config.configuration import ConfigurationManager
+from src.phone_recommender.components.data_extraction import DataExtraction
+from src.phone_recommender.config.configuration import ConfigurationManager
 
 
 class DataExtractionPipeline:

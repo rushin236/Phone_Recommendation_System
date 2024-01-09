@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 from keras.models import load_model
 
-from phone_recommender.entity import PredictionConfig
+from src.phone_recommender.entity import PredictionConfig
 
 
 def get_dataframe(path: Path):

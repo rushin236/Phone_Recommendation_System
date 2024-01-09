@@ -11,8 +11,8 @@ from keras.utils import to_categorical
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 
-from phone_recommender.entity import ModelTrainConfig, ModelTrainParams
-from phone_recommender.logging import logger
+from src.phone_recommender.entity import ModelTrainConfig, ModelTrainParams
+from src.phone_recommender.logging import logger
 
 
 class ModelTrainer:
