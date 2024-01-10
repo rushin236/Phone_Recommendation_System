@@ -10,4 +10,3 @@ PyYAML
 ensure
 Flask
 streamlit
--e .
