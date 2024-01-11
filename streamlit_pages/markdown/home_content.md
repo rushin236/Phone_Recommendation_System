@@ -1,18 +1,34 @@
-# Phone Recommendation
+<style>
+    .home-content {
+        width: 70%;
+        margin: auto;
+    }
 
-## Introduction
+    h1,
+    h2,
+    h3,
+    h4 {
+        text-align: center;
+    }
+</style>
+<div class="home-content">
+
+<h1> Phone Recommendation </h1>
+
+<h2> Introduction </h2>
 
 In today's fast-paced world, having the right smartphone can significantly enhance your home experience. Whether you're a tech enthusiast or just looking for a reliable device, we've got you covered. This recommendation system is designed to suggest phones that are best suited for your requirements and need's.
 
 A lot of people don't have the technical knowledge of phone specification, so many of them end up buying the wrong device which is not up to their expectations, so as a tech and data science enthusiast I have build a recommendation system that will help up guide and buy the right phone you desire.
 
-### What to look for while buying phone?
+<h3> What to look for while buying phone? </h3>
 
-#### Processor (CPU)
+<h4> Processor (CPU) </h4>
 
 -   It is the heart and core of your device.
 -   The processor handles all the task that you perform on your device whether it gaming, watching content scrolling through social media etc...
 -   How to choose a right one?
+
     -   A processor consists of many things, I will be explaining you the most important and that's all you will ever need.
     -   **Clock Speed**
         -   It is the usually denoted by Ghz in the phone specification.
@@ -25,7 +41,9 @@ A lot of people don't have the technical knowledge of phone specification, so ma
         -   Currently the no going process node on which processors are made is 4nm.
         -   You will always find it near the CPU specification.
 
-#### RAM (Random Access Memory)
+![processor image](https://github.com/rushin236/Phone_recommendation_system/blob/main/streamlit_pages/markdown/ARM64-support-1.png)
+
+<h4> RAM (Random Access Memory) </h4>
 
 -   It is basically a component that denotes how many application your device can run in background.
 -   The more ram a device has the more applications it can run in background with out closing them.
@@ -35,7 +53,7 @@ A lot of people don't have the technical knowledge of phone specification, so ma
     -   Speed of RAM is usually denoted by LPDDR followed by a number.
     -   Higher the number after LPDDR better will be the performance and efficiency of the RAM.
 
-#### Storage (ROM)
+<h4> Storage (ROM) </h4>
 
 -   It is like the storage room in our home.
 -   It keeps all the application, file and media files.
@@ -52,7 +70,7 @@ A lot of people don't have the technical knowledge of phone specification, so ma
         -   It is the fasted storage available on the market in terms of speed, efficiency and reliability.
         -   UFS storage is also denoted as UFS followed by a number (example UFS 3.1), and greater the number better the performance and efficiency.
 
-#### Software
+<h4> Software </h4>
 
 -   It is the component that help you to perform task and interact with your devices hardware.
 -   How to choose the right one?
@@ -63,6 +81,7 @@ A lot of people don't have the technical knowledge of phone specification, so ma
     -   So the to get a clean software experience I recommend to buy a phone with stock android.
     -   Also look for the support of camera to API for installing gcam mods which will help you click so better photos with different XML files.
 
-#### Conclusion
+<h4> Conclusion </h4>
 
 -   This is all you need to check for getting a better phone that last's you long, is good in terms for performance and efficiency, and is reliable.
+</div>

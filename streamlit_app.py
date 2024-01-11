@@ -19,7 +19,7 @@ if selected == "Home":
     with open("./streamlit_pages/markdown/home_content.md", "r", encoding="UTF-8") as home_md_file:
         home_content = home_md_file.read()
 
-    st.markdown(home_content)
+    st.markdown(home_content, unsafe_allow_html=True)
 
 elif selected == "Recommend":
     main()
