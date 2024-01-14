@@ -7,7 +7,8 @@
     h1,
     h2,
     h3,
-    h4 {
+    h4,
+    h5 {
         text-align: center;
     }
     
@@ -16,22 +17,27 @@
         text-align: center;
     }
     
-    .processor-content {
+    .processor-content,
+    .ram-content {
         display: flex;
         flex-direction: row;
         gap: 1.5rem;
     }
     
-    .p-content li {
+    .p-content li,
+    .r-content li {
         font-size: 1.1rem;
     }
     
     .p-img-content,
-    .p-content {
+    .p-content,
+    .r-img-content,
+    .r-content {
         margin: auto;
     }
     
-    .p-img-content img {
+    .p-img-content img,
+    .r-img-content img {
         padding: 0.5rem;
         border-radius: 5px;
         height: 350px;
@@ -105,33 +111,35 @@
 </div>
 </div>
 
-<h4> RAM (Random Access Memory) </h4>
+<h4> Random Access Memory (RAM) </h4>
 <div class="ram-content">
-<div class="r-content">
-<ul>
-    <p> 
-        It is basically a component that denotes how many application your device can run in background. 
-    </p>
-   <p> 
-        The more ram a device has the more applications it can run in background with out closing them. 
-   </p>
-   <h5> How to get the right one? </h5>
-    <ul>
-        <li> 
-            In todays world with applications using AI and so many other technologies, my recommendation is to go with at least 8GB RAM.
-        </li>
-        <li> 
-            RAM also has speed to as a processor has clock speed.. 
-        </li>
-        <li> 
-            Speed of RAM is usually denoted by LPDDR followed by a number. 
-        </li>
-        <li> 
-            Higher the number after LPDDR better will be the performance and efficiency of the RAM.
-        </li>
-    </ul>  
-</ul>
 <div class="r-img-content">
     <img src="https://github.com/rushin236/Phone_recommendation_system/blob/main/st_static/images/ram-image.png?raw=true" alt="Ram Image">
+</div>
+<div class="r-content">
+    <ul>
+        <p> 
+            It is basically a component that denotes how many application your device can run in background. 
+        </p>
+    <p> 
+            The more ram a device has the more applications it can run in background with out closing them. 
+    </p>
+    <h5> How to get the right one? </h5>
+        <ul>
+            <li> 
+                In todays world with applications using AI and so many other technologies, my recommendation is to go with at least 8GB RAM.
+            </li>
+            <li> 
+                RAM also has speed to as a processor has clock speed.. 
+            </li>
+            <li> 
+                Speed of RAM is usually denoted by LPDDR followed by a number. 
+            </li>
+            <li> 
+                Higher the number after LPDDR better will be the performance and efficiency of the RAM.
+            </li>
+        </ul>  
+    </ul>
+</div>
 </div>
 </div>
