@@ -1,5 +1,5 @@
 <style>
-    .home-content {
+    #home-content {
         width: 70%;
         margin: auto;
     }
@@ -17,8 +17,8 @@
         text-align: center;
     }
 
-    .processor-content,
-    .ram-content {
+    #processor-content,
+    #ram-content {
         display: flex;
         flex-direction: row;
         gap: 1.5rem;
@@ -40,12 +40,12 @@
     .r-img-content img {
         padding: 0.5rem;
         border-radius: 5px;
-        height: 350px;
-        width: 350px;
+        height: 400px;
+        width: 500px;
     }
 </style>
 
-<div class="home-content">
+<div id="home-content">
 <h1> Phone Recommendation </h1>
 
 <h2> Introduction </h2>
@@ -73,7 +73,7 @@
         A processor consists of many things, I will be explaining you the most important and that's all you will ever need.
     </p>
 </ul>
-<div class="processor-content">
+<div id="processor-content">
 <div class="p-content">
     <h5> Clock Speed </h5>
     <ul>
@@ -112,7 +112,7 @@
 </div>
 
 <h4> Random Access Memory (RAM) </h4>
-<div class="ram-content">
+<div id="ram-content">
 <div class="r-img-content">
     <img src="https://github.com/rushin236/Phone_recommendation_system/blob/main/st_static/images/ram-image.png?raw=true" alt="Ram Image">
 </div>

@@ -26,4 +26,4 @@ elif selected == "About":
     with open("./st_templates/markdown/about_content.md", "r", encoding="UTF-8") as about_md:
         about_content = about_md.read()
 
-    st.markdown(about_content)
+    st.markdown(about_content, unsafe_allow_html=True)
