@@ -3,7 +3,7 @@
         width: 70%;
         margin: auto;
     }
-    
+
     h1,
     h2,
     h3,
@@ -11,31 +11,31 @@
     h5 {
         text-align: center;
     }
-    
+
     p {
         font-size: 1.2rem;
         text-align: center;
     }
-    
+
     .processor-content,
     .ram-content {
         display: flex;
         flex-direction: row;
         gap: 1.5rem;
     }
-    
+
     .p-content li,
     .r-content li {
         font-size: 1.1rem;
     }
-    
+
     .p-img-content,
     .p-content,
     .r-img-content,
     .r-content {
         margin: auto;
     }
-    
+
     .p-img-content img,
     .r-img-content img {
         padding: 0.5rem;
