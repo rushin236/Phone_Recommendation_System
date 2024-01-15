@@ -1,4 +1,5 @@
 import pickle
+import warnings
 from pathlib import Path
 
 import numpy as np
@@ -6,6 +7,8 @@ import pandas as pd
 from keras.models import load_model
 
 from src.phone_recommender.entity import PredictionConfig
+
+warnings.filterwarnings("ignore")
 
 
 def get_dataframe(path: Path):

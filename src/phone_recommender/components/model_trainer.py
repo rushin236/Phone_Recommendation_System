@@ -1,8 +1,11 @@
 import os
 import pickle
+import warnings
 
+import keras
 import numpy as np
 import pandas as pd
+import tensorflow as tf
 from keras.layers import LSTM, Dense, Embedding
 from keras.models import Sequential
 from keras.preprocessing.sequence import pad_sequences
@@ -13,6 +16,8 @@ from sklearn.model_selection import train_test_split
 
 from src.phone_recommender.entity import ModelTrainConfig, ModelTrainParams
 from src.phone_recommender.logging import logger
+
+warnings.filterwarnings("ignore")
 
 
 class ModelTrainer:
