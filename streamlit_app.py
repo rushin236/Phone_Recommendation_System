@@ -3,6 +3,8 @@ import os
 import streamlit as st
 from streamlit_option_menu import option_menu
 
+from st_templates.recommend import main
+
 st.set_page_config(layout="wide")
 
 selected = option_menu(
@@ -20,7 +22,11 @@ if selected == "Home":
     st.markdown(home_content, unsafe_allow_html=True)
 
 elif selected == "Recommend":
-    pass
+    with open("./st_templates/markdown/recommend_content.md", "r", encoding="UTF-8") as recommend_md:
+        recommend_content = recommend_md.read()
+
+    st.markdown(recommend_content, unsafe_allow_html=True)
+    main()
 
 elif selected == "About":
     with open("./st_templates/markdown/about_content.md", "r", encoding="UTF-8") as about_md:

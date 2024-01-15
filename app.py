@@ -40,7 +40,7 @@ def recommend():
         results = request.form
         if int(results['lower_price']) > int(results['upper_price']):
             flash(
-                f"Lower Limit Price {int(results['lower_price'])} Cannot be grater than Upper Limit Price {int(results['upper_price'])}!",
+                f"Lower Limit Price {results['lower_price']} Cannot be grater than Upper Limit Price {results['upper_price']}!",
                 category='error',
             )
             return redirect(url_for("recommend"))
@@ -71,4 +71,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run()
