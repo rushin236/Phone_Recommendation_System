@@ -211,7 +211,6 @@
         </p>
     </ul>
     <h4> Which is the right one? </h4>
-    <h4> EMMC </h4>
     <ul>
         <li> 
             It is basically a personal preference and does not matter, which one you choose.
