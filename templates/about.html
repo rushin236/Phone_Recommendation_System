@@ -1,154 +1,169 @@
 {% extends "base.html" %} {% block title %}About{% endblock %} {% block content
 %} {% block style %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css' ) }}" />
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/about.css' ) }}"
+/>
 {% endblock %}
 <div class="about-container">
-    <div id="container-heading">
-        <header>
-            <h3>About</h3>
-        </header>
+  <div id="container-heading">
+    <header>
+      <h3>About</h3>
+    </header>
+  </div>
+  <div class="about-content">
+    <div class="sub-header">
+      <header>
+        <h4>Data Exploration of Phones.</h4>
+      </header>
     </div>
-    <div class="about-content">
-        <div class="sub-header">
-            <header>
-                <h4>Data Exploration of Phones.</h4>
-            </header>
-        </div>
-        <div class="data-content">
-            <div class="data-exploration">
-                <h5>Data Variables:</h5>
-                <li>
-                    Brand:
-                    <p>Company of the phone.</p>
-                </li>
-                <li>
-                    Network:
-                    <p>
-                        Network supported by phone. (In this case we have
-                        included only 4g and 5g phones.)
-                    </p>
-                </li>
-                <li>
-                    Release year:
-                    <p>The year in which phone was released.</p>
-                </li>
-                <li>
-                    Resolution:
-                    <p>The resolution of the phone.</p>
-                </li>
-                <li>
-                    Display size:
-                    <p>Size of the display.</p>
-                </li>
-                <li>
-                    Display type:
-                    <p>type of display oled, ips etc....</p>
-                </li>
-                <li>
-                    OS:
-                    <p>operating system</p>
-                </li>
-                <li>
-                    Chipset:
-                    <p>Processor used in phone.</p>
-                </li>
-                <li>
-                    Ram:
-                    <p>Ram configuration offered with phone.</p>
-                </li>
-                <li>
-                    Storage:
-                    <p>Storage Configuration offered with phone.</p>
-                </li>
-                <li>
-                    Type:
-                    <p>Storage type where is ufs or emmc.</p>
-                </li>
-                <li>
-                    Main camera:
-                    <p>
-                        The back camera of the phone. (Note only main camera is
-                        included in dataset where it may be dual triple or quad
-                        setup)
-                    </p>
-                </li>
-                <li>
-                    Selfie camera:
-                    <p>
-                        The back camera of the phone. (Note only main camera is
-                        included in dataset where it may be dual setup)
-                    </p>
-                </li>
-                <li>
-                    Bluetooth:
-                    <p>Bluetooth version.</p>
-                </li>
-                <li>
-                    Battery:
-                    <p>Battery capacity.</p>
-                </li>
-            </div>
-            <div class="data-visualization">
-                <h5>Visualizations:</h5>
-                <img src="{{ url_for('static', filename='images/top_20_technologies.png' ) }}"
-                    alt="Top 20 Technologies Distribution." />
-                <p>
-                    These are the top 20 features used in phones of todays
-                    world.
-                </p>
-                <img src="{{ url_for('static', filename='images/no_of_4g_5g_bands_distribution.png' ) }}"
-                    alt="4G and 5G Bands Distribution." />
-                <p>
-                    A lot of phones don't have 5g bands in our data set, also
-                    most of the phones have bands in between 5 to 15 may the
-                    phone be 5g or 4g.
-                </p>
-                <img src="{{ url_for('static', filename='images/top_6_camera.png' ) }}" alt="Camera Distribution" />
-                <p>
-                    So 50mp, 13mp followed by 48mp can be seen in a lot of
-                    phones with respect to data. Note: the camera mega pixel
-                    don't matter a lot when it comes to the picture quality but
-                    also the camera app which plays the most important role in
-                    making the image as these cameras heavily relies on the AI
-                    to process the image.
-                </p>
-                <img src="{{ url_for('static', filename='images/top_6_front_camera.png' ) }}"
-                    alt="Front Camera Distribution." />
-                <p>
-                    In terms of front camera the 16mp and 8mp is the most common
-                    choice.
-                </p>
-                <img src="{{ url_for('static', filename='images/top_6_display_sizes.png' ) }}"
-                    alt="Display Size Distribution" />
-                <p>
-                    So as we can see as of now the most common display size is
-                    6.5 inch followed by 6.7 and 6.6. The pattern here that we
-                    can see is the now brands are moving towards bigger displays
-                    from smaller once.
-                </p>
-                <img src="{{ url_for('static', filename='images/Top_6_display_types.png' ) }}"
-                    alt="Display Types Distribution." />
-                <p>
-                    Most common type of display used in mobile phone is ips
-                    panel. Followed by super OLED which is better than ips in
-                    terms of brightness and color contrast.
-                </p>
-                <img src="{{ url_for('static', filename='images/top_6_ram_config.png' ) }}"
-                    alt="Ram Config Distribution." />
-                <p>
-                    So as we can see that a lot of phones offer ram from 6gb to
-                    12gb. With 8gb being the most common option.
-                </p>
-                <img src="{{ url_for('static', filename='images/top_storage_config.png' ) }}"
-                    alt="Storage Config Distribution." />
-                <p>
-                    In todays world of growing file sizes we can see that 128 gb
-                    and 256gb config are the most common.
-                </p>
-                <img src="{{ url_for('static', filename='images/top_chipsets.png' ) }}" alt="Chipset Distribution." />
-                <p>Top 10 chipset used by phone manufactures.</p>
-            </div>
-        </div>
+    <div class="data-content">
+      <div class="data-exploration">
+        <h5>Data Variables:</h5>
+        <li>
+          Brand:
+          <p>Company of the phone.</p>
+        </li>
+        <li>
+          Network:
+          <p>
+            Network supported by phone. (In this case we have included only 4g
+            and 5g phones.)
+          </p>
+        </li>
+        <li>
+          Release year:
+          <p>The year in which phone was released.</p>
+        </li>
+        <li>
+          Resolution:
+          <p>The resolution of the phone.</p>
+        </li>
+        <li>
+          Display size:
+          <p>Size of the display.</p>
+        </li>
+        <li>
+          Display type:
+          <p>type of display oled, ips etc....</p>
+        </li>
+        <li>
+          OS:
+          <p>operating system</p>
+        </li>
+        <li>
+          Chipset:
+          <p>Processor used in phone.</p>
+        </li>
+        <li>
+          Ram:
+          <p>Ram configuration offered with phone.</p>
+        </li>
+        <li>
+          Storage:
+          <p>Storage Configuration offered with phone.</p>
+        </li>
+        <li>
+          Type:
+          <p>Storage type where is ufs or emmc.</p>
+        </li>
+        <li>
+          Main camera:
+          <p>
+            The back camera of the phone. (Note only main camera is included in
+            dataset where it may be dual triple or quad setup)
+          </p>
+        </li>
+        <li>
+          Selfie camera:
+          <p>
+            The back camera of the phone. (Note only main camera is included in
+            dataset where it may be dual setup)
+          </p>
+        </li>
+        <li>
+          Bluetooth:
+          <p>Bluetooth version.</p>
+        </li>
+        <li>
+          Battery:
+          <p>Battery capacity.</p>
+        </li>
+      </div>
+      <div class="data-visualization">
+        <h5>Visualizations:</h5>
+        <img
+          src="{{ url_for('static', filename='images/top_20_technologies.png' ) }}"
+          alt="Top 20 Technologies Distribution."
+        />
+        <p>These are the top 20 features used in phones of todays world.</p>
+        <img
+          src="{{ url_for('static', filename='images/no_of_4g_5g_bands_distribution.png' ) }}"
+          alt="4G and 5G Bands Distribution."
+        />
+        <p>
+          A lot of phones don't have 5g bands in our data set, also most of the
+          phones have bands in between 5 to 15 may the phone be 5g or 4g.
+        </p>
+        <img
+          src="{{ url_for('static', filename='images/top_6_camera.png' ) }}"
+          alt="Camera Distribution"
+        />
+        <p>
+          So 50mp, 13mp followed by 48mp can be seen in a lot of phones with
+          respect to data. Note: the camera mega pixel don't matter a lot when
+          it comes to the picture quality but also the camera app which plays
+          the most important role in making the image as these cameras heavily
+          relies on the AI to process the image.
+        </p>
+        <img
+          src="{{ url_for('static', filename='images/top_6_front_camera.png' ) }}"
+          alt="Front Camera Distribution."
+        />
+        <p>
+          In terms of front camera the 16mp and 8mp is the most common choice.
+        </p>
+        <img
+          src="{{ url_for('static', filename='images/top_6_display_sizes.png' ) }}"
+          alt="Display Size Distribution"
+        />
+        <p>
+          So as we can see as of now the most common display size is 6.5 inch
+          followed by 6.7 and 6.6. The pattern here that we can see is the now
+          brands are moving towards bigger displays from smaller once.
+        </p>
+        <img
+          src="{{ url_for('static', filename='images/Top_6_display_types.png' ) }}"
+          alt="Display Types Distribution."
+        />
+        <p>
+          Most common type of display used in mobile phone is ips panel.
+          Followed by super OLED which is better than ips in terms of brightness
+          and color contrast.
+        </p>
+        <img
+          src="{{ url_for('static', filename='images/top_6_ram_config.png' ) }}"
+          alt="Ram Config Distribution."
+        />
+        <p>
+          So as we can see that a lot of phones offer ram from 6gb to 12gb. With
+          8gb being the most common option.
+        </p>
+        <img
+          src="{{ url_for('static', filename='images/top_storage_config.png' ) }}"
+          alt="Storage Config Distribution."
+        />
+        <p>
+          In todays world of growing file sizes we can see that 128 gb and 256gb
+          config are the most common.
+        </p>
+        <img
+          src="{{ url_for('static', filename='images/top_chipsets.png' ) }}"
+          alt="Chipset Distribution."
+        />
+        <p>Top 10 chipset used by phone manufactures.</p>
+      </div>
     </div>
-    {%endblock%}
+  </div>
+  {%endblock%}
 </div>
