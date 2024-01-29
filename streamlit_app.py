@@ -16,20 +16,29 @@ selected = option_menu(
 )
 
 if selected == "Home":
-    with open("./st_templates/markdown/home_content.md", "r", encoding="UTF-8") as home_md:
+    with open(
+        "./st_templates/markdown/home_content.md", "r", encoding="UTF-8"
+    ) as home_md:
         home_content = home_md.read()
 
     st.markdown(home_content, unsafe_allow_html=True)
 
 elif selected == "Recommend":
-    with open("./st_templates/markdown/recommend_content.md", "r", encoding="UTF-8") as recommend_md:
+    with open(
+        "./st_templates/markdown/recommend_content.md", "r", encoding="UTF-8"
+    ) as recommend_md:
         recommend_content = recommend_md.read()
 
-    st.markdown(recommend_content, unsafe_allow_html=True)
+    st.markdown(
+        f"""{recommend_content}""",
+        unsafe_allow_html=True,
+    )
     main()
 
 elif selected == "About":
-    with open("./st_templates/markdown/about_content.md", "r", encoding="UTF-8") as about_md:
+    with open(
+        "./st_templates/markdown/about_content.md", "r", encoding="UTF-8"
+    ) as about_md:
         about_content = about_md.read()
 
     st.markdown(about_content, unsafe_allow_html=True)
