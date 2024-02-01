@@ -2,9 +2,10 @@ pandas
 numpy
 matplotlib
 seaborn
-ipykernel
 scikit-learn
 tensorflow
+ipykernel
+notebook
 python-box
 PyYAML
 ensure
