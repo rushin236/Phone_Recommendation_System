@@ -13,4 +13,4 @@ logging.basicConfig(
     handlers=[logging.FileHandler(log_filepath), logging.StreamHandler(sys.stdout)],
 )
 
-logger = logging.getLogger("phoneRecommenderLogger")
+logger = logging.getLogger("phone_recommender")
