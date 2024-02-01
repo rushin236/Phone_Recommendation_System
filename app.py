@@ -8,15 +8,15 @@ from flask import (
     url_for,
 )
 
-from src.phone_recommender.pipeline.stage_06_prediction import UserPredictionPipeline
+from phone_recommender.pipeline.stage_06_prediction import UserPredictionPipeline
 
 app = Flask(__name__)
 app.secret_key = "123"
 
 
-@app.route('/static/<path:filename>')
+@app.route("/static/<path:filename>")
 def static_files(filename):
-    return send_from_directory('static', filename)
+    return send_from_directory("static", filename)
 
 
 @app.route("/")
@@ -38,10 +38,10 @@ def home():
 def recommend():
     if request.method == "POST":
         results = request.form
-        if int(results['lower_price']) > int(results['upper_price']):
+        if int(results["lower_price"]) > int(results["upper_price"]):
             flash(
                 f"Lower Limit Price {results['lower_price']} Cannot be grater than Upper Limit Price {results['upper_price']}!",
-                category='error',
+                category="error",
             )
             return redirect(url_for("recommend"))
         else:
@@ -53,7 +53,7 @@ def recommend():
             else:
                 flash(
                     f"No recommendations found for {' '.join([value for key, value in results.items() if key not in ['lower_price', 'upper_price']])} given specifications! change the inputs and try again!",
-                    category='error',
+                    category="error",
                 )
                 return redirect(url_for("recommend"))
     elif request.method == "GET":

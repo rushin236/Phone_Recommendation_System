@@ -2,8 +2,8 @@ import os
 
 import pandas as pd
 
-from src.phone_recommender.entity import DataExtractionConfig
-from src.phone_recommender.logging import logger
+from phone_recommender.entity import DataExtractionConfig
+from phone_recommender.logging import logger
 
 
 class DataExtraction:
@@ -13,7 +13,9 @@ class DataExtraction:
     def get_local_data(self):
         local_data_file = self.config.local_data_file
         if not os.path.exists(local_data_file):
-            logger.info("No local data file exists please check if data ingestion is complete!")
+            logger.info(
+                "No local data file exists please check if data ingestion is complete!"
+            )
         else:
             df = pd.read_csv(local_data_file)
             return df

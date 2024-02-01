@@ -1,5 +1,5 @@
-from src.phone_recommender.components.data_ingestion import DataIngestion
-from src.phone_recommender.config.configuration import ConfigurationManager
+from phone_recommender.components.data_ingestion import DataIngestion
+from phone_recommender.config.configuration import ConfigurationManager
 
 
 class DataIngestionPipeline:

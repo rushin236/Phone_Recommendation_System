@@ -11,3 +11,4 @@ ensure
 Flask
 streamlit
 streamlit-option-menu
+-e .

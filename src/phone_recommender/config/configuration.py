@@ -1,5 +1,5 @@
-from src.phone_recommender.constants import *
-from src.phone_recommender.entity import (
+from phone_recommender.constants import *
+from phone_recommender.entity import (
     DataExtractionConfig,
     DataIngestionConfig,
     DataTransformConfig,
@@ -8,11 +8,13 @@ from src.phone_recommender.entity import (
     ModelTrainParams,
     PredictionConfig,
 )
-from src.phone_recommender.utils.common import create_directories, read_yaml
+from phone_recommender.utils.common import create_directories, read_yaml
 
 
 class ConfigurationManager:
-    def __init__(self, config_filepath=CONFIG_FILE_PATH, params_filepath=PARAMS_FILE_PATH) -> None:
+    def __init__(
+        self, config_filepath=CONFIG_FILE_PATH, params_filepath=PARAMS_FILE_PATH
+    ) -> None:
         self.config = read_yaml(config_filepath)
         self.params = read_yaml(params_filepath)
 
@@ -24,7 +26,9 @@ class ConfigurationManager:
         create_directories([config.root_dir])
 
         data_ingestion_config = DataIngestionConfig(
-            root_dir=config.root_dir, source_URL=config.source_URL, local_data_file=config.local_data_file
+            root_dir=config.root_dir,
+            source_URL=config.source_URL,
+            local_data_file=config.local_data_file,
         )
 
         return data_ingestion_config
@@ -35,7 +39,9 @@ class ConfigurationManager:
         create_directories([config.root_dir])
 
         data_validation_config = DataValidationConfig(
-            root_dir=config.root_dir, STATUS_FILE=config.STATUS_FILE, ALL_REQUIRED_FILES=config.ALL_REQUIRED_FILES
+            root_dir=config.root_dir,
+            STATUS_FILE=config.STATUS_FILE,
+            ALL_REQUIRED_FILES=config.ALL_REQUIRED_FILES,
         )
 
         return data_validation_config

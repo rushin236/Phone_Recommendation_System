@@ -1,6 +1,6 @@
 import streamlit as st
 
-from src.phone_recommender.pipeline.stage_06_prediction import UserPredictionPipeline
+from phone_recommender.pipeline.stage_06_prediction import UserPredictionPipeline
 
 
 def main():

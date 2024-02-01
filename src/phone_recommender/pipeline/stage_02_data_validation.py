@@ -1,5 +1,5 @@
-from src.phone_recommender.components.data_validation import DataValidation
-from src.phone_recommender.config.configuration import ConfigurationManager
+from phone_recommender.components.data_validation import DataValidation
+from phone_recommender.config.configuration import ConfigurationManager
 
 
 class DataValidationPipeline:

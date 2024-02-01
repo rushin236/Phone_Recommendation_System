@@ -6,14 +6,14 @@ import numpy as np
 import pandas as pd
 from keras.models import load_model
 
-from src.phone_recommender.entity import PredictionConfig
+from phone_recommender.entity import PredictionConfig
 
 warnings.filterwarnings("ignore")
 
 
 def get_dataframe(path: Path):
     trans_df = pd.read_csv(path)
-    trans_df['display_size_str'] = trans_df['display_size_str'].astype('str')
+    trans_df["display_size_str"] = trans_df["display_size_str"].astype("str")
     return trans_df
 
 
@@ -26,25 +26,25 @@ def get_count_vectorizer(path: Path):
 def get_dtm(cv, trans_df):
     dtm = trans_df[
         [
-            'network',
-            'released_year',
-            'resolution',
-            'display_size_str',
-            'display_type',
-            'chipset',
-            'ram',
-            'storage',
-            'type',
-            'main_camera',
-            'selfie_camera',
-            'bluetooth',
-            'battery',
+            "network",
+            "released_year",
+            "resolution",
+            "display_size_str",
+            "display_type",
+            "chipset",
+            "ram",
+            "storage",
+            "type",
+            "main_camera",
+            "selfie_camera",
+            "bluetooth",
+            "battery",
         ]
     ]
 
-    dtm['new_text'] = dtm.apply(lambda x: " ".join(map(str, x)), axis=1)
+    dtm["new_text"] = dtm.apply(lambda x: " ".join(map(str, x)), axis=1)
 
-    dtm = cv.transform(dtm['new_text'])
+    dtm = cv.transform(dtm["new_text"])
     return dtm
 
 

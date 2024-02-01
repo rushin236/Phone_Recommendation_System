@@ -5,7 +5,7 @@ import yaml
 from box import ConfigBox
 from box.exceptions import BoxValueError
 from ensure import ensure_annotations
-from src.phone_recommender.logging import logger
+from phone_recommender.logging import logger
 
 
 @ensure_annotations

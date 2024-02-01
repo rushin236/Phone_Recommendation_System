@@ -1,7 +1,7 @@
 import os
 
-from src.phone_recommender.entity import DataValidationConfig
-from src.phone_recommender.logging import logger
+from phone_recommender.entity import DataValidationConfig
+from phone_recommender.logging import logger
 
 
 class DataValidation:

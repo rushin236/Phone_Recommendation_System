@@ -3,36 +3,49 @@ import pandas as pd
 from keras.preprocessing.sequence import pad_sequences
 from sklearn.metrics.pairwise import cosine_similarity
 
-from src.phone_recommender.components.user_prediction import Prediction
-from src.phone_recommender.config.configuration import ConfigurationManager
+from phone_recommender.components.user_prediction import Prediction
+from phone_recommender.config.configuration import ConfigurationManager
 
 
 def get_class_prediction(model, trans_df, tokenizer, max_sequence_length, user_data):
     user_features = ""
     for feat, spec in user_data.items():
-        if feat not in ['lower_price', 'upper_price']:
+        if feat not in ["lower_price", "upper_price"]:
             if spec in set(trans_df[feat]):
                 user_features += spec + " "
 
             else:
                 user_features += "0" + " "
 
-    lower_price = float(user_data['lower_price'])
-    upper_price = float(user_data['upper_price'])
+    lower_price = float(user_data["lower_price"])
+    upper_price = float(user_data["upper_price"])
 
     if lower_price == upper_price:
         upper_price += 2000
 
     user_features = user_features.strip()
     user_input = tokenizer.texts_to_sequences([user_features])
-    user_input = pad_sequences(sequences=user_input, maxlen=max_sequence_length, padding="post")
+    user_input = pad_sequences(
+        sequences=user_input, maxlen=max_sequence_length, padding="post"
+    )
     user_prediction = model.predict(user_input)
     user_prediction = np.argmax(user_prediction, axis=1)
     return user_features, user_prediction[0], lower_price, upper_price
 
 
-def get_recommendation(trans_df: pd.DataFrame(), cv, dtm, user_features, user_prediction, lower_price, upper_price):
-    idx = trans_df[(trans_df['class'] == user_prediction) & (trans_df['price'].between(lower_price, upper_price))].index
+def get_recommendation(
+    trans_df: pd.DataFrame(),
+    cv,
+    dtm,
+    user_features,
+    user_prediction,
+    lower_price,
+    upper_price,
+):
+    idx = trans_df[
+        (trans_df["class"] == user_prediction)
+        & (trans_df["price"].between(lower_price, upper_price))
+    ].index
     user_cv = cv.transform([user_features])
     dtm = pd.DataFrame(dtm.toarray(), columns=cv.get_feature_names_out())
     recommendation = (
@@ -44,23 +57,23 @@ def get_recommendation(trans_df: pd.DataFrame(), cv, dtm, user_features, user_pr
     recommendation = trans_df.loc[
         recommendation,
         [
-            'brand',
-            'phone_name',
-            'network',
-            'released_year',
-            'resolution',
-            'display_size_str',
-            'display_type',
-            'os',
-            'chipset',
-            'ram',
-            'storage',
-            'type',
-            'main_camera',
-            'selfie_camera',
-            'bluetooth',
-            'battery',
-            'price',
+            "brand",
+            "phone_name",
+            "network",
+            "released_year",
+            "resolution",
+            "display_size_str",
+            "display_type",
+            "os",
+            "chipset",
+            "ram",
+            "storage",
+            "type",
+            "main_camera",
+            "selfie_camera",
+            "bluetooth",
+            "battery",
+            "price",
         ],
     ]
 
@@ -91,11 +104,20 @@ class UserPredictionPipeline:
         config = ConfigurationManager()
         prediction_config = config.get_prediction_config()
         prediction = Prediction(prediction_config)
-        trans_df, cv, tokenizer, model, max_sequence_length, dtm = prediction.get_objects()
+        (
+            trans_df,
+            cv,
+            tokenizer,
+            model,
+            max_sequence_length,
+            dtm,
+        ) = prediction.get_objects()
         user_features, user_prediction, lower_price, upper_price = get_class_prediction(
             model, trans_df, tokenizer, max_sequence_length, user_data
         )
-        recommendation = get_recommendation(trans_df, cv, dtm, user_features, user_prediction, lower_price, upper_price)
+        recommendation = get_recommendation(
+            trans_df, cv, dtm, user_features, user_prediction, lower_price, upper_price
+        )
         # print(recommendation)
         return recommendation
 
